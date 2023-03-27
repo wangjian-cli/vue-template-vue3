@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="//s.thsi.cn/css/sp/api/liuyan/gray/default.min.css" />
+  <script src="//s.thsi.cn/hxapp/m/base/js/skywalking.1.1.7-2.min.js" crossorigin></script>
+  <script src="//s.thsi.cn/cd/b2cweb-fe-common-resource-pod/js/performance/fe-skywalking/1.3.0/performance.utils.min.js"
+    crossorigin></script>
+  <script>
+    try {
+      PerformanceUtils.setConfig({
+        projectName: 'trader-esoterica',
+        title: '操盘秘籍', //没有该参数时会自动通过`document.title`拿html上面的title名称,如果同一个项目每个页面的title都不一样的话务必设置一个总的title来标识一下这个项目
+        rate: '1', //收费项目采样率统一为1，一般情况pcweb项目采样率统一为1，push页面采样率0.3
+        service: 'b2cpcweb::b2cweb-trader-esoterica-front', //固定前缀b2cpcweb::+容器名(找后端同事确认)
+        uuid: 'f0ab27394ea3951d2836d900fe950c83', //femonitor平台uuid,
+        subGroup: 'charge' //收费-charge；免费：free
+      });
+    } catch (e) {
+      console.warn(e.message);
+    }
+  </script>
+  <script src="//s.thsi.cn/js/common/shield/shield.js" crossorigin></script>
+  <title>操盘秘籍</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="//s.thsi.cn/cb?/js/common/cefapi/1.5.5/cefApi.min.js;/js/common/b2c/ta/ta.min.js"
+    crossorigin="anonymous"></script>
+  <script src="//s.thsi.cn/cd/b2cweb-fe-common-resource-pod/js/acme/1.4.1/acme.min.js" crossorigin></script>
+  <!-- 视频播放组件 -->
+  <script src="//s.thsi.cn/cd/b2cweb-fe-common-resource-pod/js/videocomponent/1.0.0/videocomponent.umd.js"></script>
+  <!-- 免责声明 -->
+  <script src="//erup.10jqka.com.cn/charge/fecommon/nocache/js/disclaimer/dist/2.0.1/disclaimer.min.js"></script>
+  <script type="module" src="/src/main.ts" crossorigin></script>
+</body>
+
+</html>
