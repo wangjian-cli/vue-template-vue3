@@ -75,7 +75,7 @@ export default defineConfig((mode: ConfigEnv) => {
       // 要去除console需要增加如下选项才能执行
       minify: 'terser',
       outDir: 'html',
-      assetsInlineLimit: assetsInlineLimitNum,
+      assetsInlineLimit: 102400,
       rollupOptions: {
         output: {
           chunkFileNames: () => 'js/[name]-[hash].js',
