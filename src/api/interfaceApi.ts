@@ -1,5 +1,2 @@
-interface InterfaceApi {
-}
-const interfaceApi: InterfaceApi = {
-};
+const interfaceApi: Record<string, string> = {};
 export default interfaceApi;
